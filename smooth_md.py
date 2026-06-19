@@ -1,3 +1,4 @@
+#Credit for this script: Eric Pettersen see https://rbvi.github.io/chimerax-recipes/smooth_md/smooth_md.html
 window = 3  # number of adjacent frames to average
 stride = 1  # only use every Nth frame of trajectory (to save memory for large trjectories)
 
