@@ -1,7 +1,7 @@
 #!/bin/bash
-
-prmtop="abl_ligand.prmtop"
-ref="step9.rst7"
+export PATH=/data/tools/ambertools25/bin:$PATH
+prmtop="../abl_ligand.prmtop"
+ref="../step9.rst7"
 name="abl_lig" #name of trajectory file (.nc file)
 res="1-265"          #number of residues in system
 
@@ -12,7 +12,7 @@ rm -f cpptraj-movie.sh $name-movie.cpptraj
 cat > "$name-movie.cpptraj" <<EOF
 parm $prmtop
 reference $ref
-trajin $name.nc
+trajin ../$name.nc
 
 autoimage #centers and images the trajectory
 rms Autofit :$res@CA reference mass #calculate a mass weighted, RMS fit to the 1st structure
