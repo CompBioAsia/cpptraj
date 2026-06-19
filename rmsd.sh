@@ -1,8 +1,8 @@
 #!/bin/bash
 export PATH=/data/tools/ambertools25/bin:$PATH
 offset=1
-ref=abl_ligand.inpcrd
-prmtop=abl_ligand.prmtop
+ref=../abl_ligand.inpcrd
+prmtop=../abl_ligand.prmtop
 
 # Clean start
 rm -f rmsd.cpptraj
@@ -10,7 +10,7 @@ rm -f rmsd.cpptraj
 # Write cpptraj input
 {
   echo "parm $prmtop"
-  echo "trajin abl_lig.nc 1 last $offset"
+  echo "trajin ../abl_lig.nc 1 last $offset"
   echo "reference $ref parm $prmtop [$ref]"
   echo "autoimage"
   echo "rms @CA ref [$ref] out $ref-rmsd-pre.csv mass"
